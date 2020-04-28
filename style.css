@@ -94,5 +94,13 @@ body, html {
     margin: 0 auto;
 }
 
+#results {
+    text-align: center;
+    margin-top: 10px;
+    font-size: x-large;
+    color: red;
+    font-weight: bold;
+}
+
 
 
