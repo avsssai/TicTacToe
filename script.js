@@ -30,13 +30,23 @@ function results() {
     return el.textContent;
   });
   let horizontalCheck = (arr) => {
-    let patternString = arr.join(" ");
-    console.log(patternString);
-    if (patternString.includes("X X X") || patternString.includes("O O O")) {
-      return true;
-    }
-    return false;
+    // let patternString = arr.join(" ");
+    // console.log(patternString);
+    // if (patternString.includes("X X X") || patternString.includes("O O O")) {
+    //   return true;
+    // }
+    // return false;
+    for (let i = 0; i < 9; i += 3) {
+        let check = arr[i] + arr[i + 1] + arr[i + 2];
+  
+        if (check === "XXX" || check === "OOO") {
+            console.log(check);
+          return true;
+        }
+        // return false;
+      }
   };
+
   let verticalCheck = (arr) => {
     for (let i = 0; i < 3; i++) {
       let check = arr[i] + arr[3 + i] + arr[6 + i];
@@ -80,7 +90,7 @@ function results() {
   } else {
     if (pattern.join("").trim().length === 9) {
       console.log("Game drew!");
-      resultsNode.textContent = current + " Drew the game!";
+      resultsNode.textContent = "Game Drew!";
 
       return;
     } else {
